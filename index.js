@@ -1,20 +1,28 @@
-function logActivity() {
-    const activityInput = document.getElementById('activity');
-    const durationInput = document.getElementById('duration');
-    const activityLog = document.getElementById('activity-log');
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
 
-    const activity = activityInput.value;
-    const duration = durationInput.value;
+.container {
+    text-align: center;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
 
-    if (activity && duration) {
-        const listItem = document.createElement('li');
-        listItem.textContent = `${activity}: ${duration} minutes`;
-        activityLog.appendChild(listItem);
+button {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
 
-        // Clear input fields
-        activityInput.value = '';
-        durationInput.value = '';
-    } else {
-        alert('Please enter both activity and duration.');
-    }
+button:hover {
+    background-color: #45a049;
 }
