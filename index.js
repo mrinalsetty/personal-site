@@ -16,8 +16,9 @@ function showTab(tabName) {
     
     const linkedinContent = `
         <!-- LinkedIn Badge Container -->
-        <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="large" data-theme="dark" data-type="HORIZONTAL" data-vanity="mrinalsetty" data-version="v1"></div>
-    `;
+        <div class="linkedin-container">
+            <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="large" data-theme="dark" data-type="HORIZONTAL" data-vanity="mrinalsetty" data-version="v1"></div>
+        </div>`;
 
     const tabContent = document.getElementById('tab-content');
     
