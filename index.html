@@ -4,13 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <title>Inspiration Generator</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Progress Tracker</title>
 </head>
 <body>
     <div class="container">
-        <h1>Inspiration Generator</h1>
-        <p id="quote">Click the button for inspiration!</p>
-        <button onclick="generateQuote()">Generate Quote</button>
+        <h1>Progress Tracker</h1>
+        <canvas id="pieChart" width="400" height="400"></canvas>
+        <div id="dataEntry">
+            <!-- Form for updating data -->
+        </div>
     </div>
 
     <script src="script.js"></script>
