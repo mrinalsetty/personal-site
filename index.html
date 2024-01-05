@@ -5,17 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <script src="index.js" defer></script>
-    <!-- LinkedIn script tag -->
-    <script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
     <title>My Personal Site</title>
 </head>
 <body>
     <div id="tabs">
         <button onclick="showTab('home')">Home</button>
-        <button onclick="showTab('linkedin')">LinkedIn</button>
+        <button onclick="loadLinkedIn()">LinkedIn</button>
     </div>
     <div id="tab-content">
         <!-- Content for both tabs will be displayed here -->
     </div>
+
+    <!-- Script to dynamically load LinkedIn script -->
+    <script>
+        function loadLinkedIn() {
+            const script = document.createElement('script');
+            script.type = 'text/javascript';
+            script.async = true;
+            script.defer = true;
+            script.src = 'https://platform.linkedin.com/badges/js/profile.js';
+            document.head.appendChild(script);
+
+            // Show LinkedIn content after script is loaded (you might need to adjust this timing)
+            setTimeout(() => showTab('linkedin'), 1000);
+        }
+    </script>
 </body>
 </html>
