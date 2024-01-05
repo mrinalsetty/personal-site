@@ -10,7 +10,7 @@
 <body>
     <div id="tabs">
         <button onclick="showTab('home')">Home</button>
-        <button onclick="loadLinkedIn()">LinkedIn</button>
+        <button onclick="showTab('linkedin')">LinkedIn</button>
     </div>
     <div id="tab-content">
         <!-- Content for both tabs will be displayed here -->
@@ -18,7 +18,41 @@
 
     <!-- Script to dynamically load LinkedIn script -->
     <script>
-        function loadLinkedIn() {
+        function showTab(tabName) {
+            const tabContent = document.getElementById('tab-content');
+            tabContent.innerHTML = '';
+
+            if (tabName === 'home') {
+                // Content for 'home' tab
+                tabContent.innerHTML = `
+                    <h1>Hey, my name is Mrinal Setty</h1>
+                    <h2>About me:</h2>
+                    <ul>
+                        <li>Software Engineer @ Deloitte</li>
+                        <li>AI | Cloud & Data Engineer | Full Stack | AzureX3</li>
+                        <li>Ex - CAST Software</li>
+                        <li>Born in 2K</li>
+                        <li>Living in Bangalore</li>
+                        <li>NIE CSE '22 grad</li>
+                    </ul>
+                    <input type="email" placeholder="Enter email..">
+                    <button>Join newsletter</button>
+                `;
+            } else if (tabName === 'linkedin') {
+                // Content for 'linkedin' tab
+                tabContent.innerHTML = `
+                    <!-- LinkedIn Badge Container -->
+                    <div class="linkedin-container">
+                        <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="large" data-theme="dark" data-type="HORIZONTAL" data-vanity="mrinalsetty" data-version="v1"></div>
+                    </div>
+                `;
+
+                // Dynamically load LinkedIn script
+                loadLinkedInScript();
+            }
+        }
+
+        function loadLinkedInScript() {
             const script = document.createElement('script');
             script.type = 'text/javascript';
             script.async = true;
