@@ -1,34 +1,20 @@
-function showTab(tabName) {
-    const homeContent = `
-        <h1>Hey, my name is Mrinal Setty</h1>
-        <h2>About me:</h2>
-        <ul>
-            <li>Software Engineer @ Deloitte</li>
-            <li>AI | Cloud & Data Engineer | Full Stack | AzureX3</li>
-            <li>Ex - CAST Software</li>
-            <li>Born in 2K</li>
-            <li>Living in Bangalore</li>
-            <li>NIE CSE '22 grad</li>
-        </ul>
-        <input type="email" placeholder="Enter email..">
-        <button>Join newsletter</button>
-    `;
-    
-    const linkedinContent = `
-        <!-- LinkedIn Badge Container -->
-        <div class="linkedin-container">
-            <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="large" data-theme="dark" data-type="HORIZONTAL" data-vanity="mrinalsetty" data-version="v1"></div>
-        </div>`;
+function logActivity() {
+    const activityInput = document.getElementById('activity');
+    const durationInput = document.getElementById('duration');
+    const activityLog = document.getElementById('activity-log');
 
-    const tabContent = document.getElementById('tab-content');
-    
-    // Hide all tab contents
-    tabContent.innerHTML = '';
+    const activity = activityInput.value;
+    const duration = durationInput.value;
 
-    // Display the selected tab content
-    if (tabName === 'home') {
-        tabContent.innerHTML = homeContent;
-    } else if (tabName === 'linkedin') {
-        tabContent.innerHTML = linkedinContent;
+    if (activity && duration) {
+        const listItem = document.createElement('li');
+        listItem.textContent = `${activity}: ${duration} minutes`;
+        activityLog.appendChild(listItem);
+
+        // Clear input fields
+        activityInput.value = '';
+        durationInput.value = '';
+    } else {
+        alert('Please enter both activity and duration.');
     }
 }
