@@ -4,62 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <script src="index.js" defer></script>
-    <title>My Personal Site</title>
+    <title>Fitness Tracker</title>
 </head>
 <body>
-    <div id="tabs">
-        <button onclick="showTab('home')">Home</button>
-        <button onclick="showTab('linkedin')">LinkedIn</button>
+    <div class="container">
+        <h1>Fitness Tracker</h1>
+        
+        <div class="activity-form">
+            <label for="activity">Activity:</label>
+            <input type="text" id="activity" placeholder="e.g., Running">
+
+            <label for="duration">Duration (minutes):</label>
+            <input type="number" id="duration" placeholder="30">
+
+            <button onclick="logActivity()">Log Activity</button>
+        </div>
+
+        <div class="log-container">
+            <h2>Activity Log</h2>
+            <ul id="activity-log"></ul>
+        </div>
     </div>
-    <div id="tab-content">
-        <!-- Content for both tabs will be displayed here -->
-    </div>
 
-    <!-- Script to dynamically load LinkedIn script -->
-    <script>
-        function showTab(tabName) {
-            const tabContent = document.getElementById('tab-content');
-            tabContent.innerHTML = '';
-
-            if (tabName === 'home') {
-                // Content for 'home' tab
-                tabContent.innerHTML = `
-                    <h1>Hey, my name is Mrinal Setty</h1>
-                    <h2>About me:</h2>
-                    <ul>
-                        <li>Software Engineer @ Deloitte</li>
-                        <li>AI | Cloud & Data Engineer | Full Stack | AzureX3</li>
-                        <li>Ex - CAST Software</li>
-                        <li>Born in 2K</li>
-                        <li>Living in Bangalore</li>
-                        <li>NIE CSE '22 grad</li>
-                    </ul>
-                    <input type="email" placeholder="Enter email..">
-                    <button>Join newsletter</button>
-                `;
-            } else if (tabName === 'linkedin') {
-                // Content for 'linkedin' tab
-                tabContent.innerHTML = `
-                    <!-- LinkedIn Badge Container -->
-                    <div class="linkedin-container">
-                        <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="large" data-theme="dark" data-type="HORIZONTAL" data-vanity="mrinalsetty" data-version="v1"></div>
-                    </div>
-                `;
-
-                // Dynamically load LinkedIn script
-                loadLinkedInScript();
-            }
-        }
-
-        function loadLinkedInScript() {
-            const script = document.createElement('script');
-            script.type = 'text/javascript';
-            script.async = true;
-            script.defer = true;
-            script.src = 'https://platform.linkedin.com/badges/js/profile.js';
-            document.head.appendChild(script);
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
