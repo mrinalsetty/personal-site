@@ -1,29 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
-    <link rel="stylesheet" href="styles.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Black+Ops+One&family=Creepster&family=La+Belle+Aurore&family=MedievalSharp&family=Orbitron&family=Rye&display=swap" rel="stylesheet">
-    <script src="index.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+    <script src="index.js" defer></script>
+    <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+    <title>My Personal Site</title>
 </head>
 <body>
-    <div id="your-content">
-        <h1>Hey, my name is Mrinal Setty</h1>
-        <h2>About me:</h2>
-        <ul>
-            <li>Software Engineer @ Deloitte</li>
-            <li>Artificial Intelligence | Cloud & Data Engineer | Full Stack Engineer | AzureX3</li>
-            <li>Ex - CAST Software</li>
-            <li>Born in 2K</li>
-            <li>Living in Bangalore</li>
-            <li>The National Institute of Engineering CSE '22 grad</li>
-        </ul>
-        <input type="email" placeholder="Enter email..">
-        <button>Join newsletter</button>
-        <br>
-        <p>Connect with me on LinkedIn <a href="https://in.linkedin.com/in/mrinalsetty" target="_blank">here</a></p>
-        <!-- Include LinkedIn Badge Container from external file -->
-        <object type="text/html" data="linkedin-container.html"></object>
+    <div id="tabs">
+        <button onclick="showTab('home')">Home</button>
+        <button onclick="showTab('linkedin')">LinkedIn</button>
+    </div>
+    <div id="tab-content">
+        <!-- Content for both tabs will be displayed here -->
     </div>
 </body>
 </html>
