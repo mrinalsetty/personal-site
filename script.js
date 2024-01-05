@@ -23,9 +23,10 @@ function updateTasksList() {
     });
 }
 
+// Update the button to call updateTasksList instead of updateProgress
 function updateProgress() {
     progressData.tasks.forEach((task, index) => {
-        progressData.Mrinal.completion[index] = Math.floor(Math.random() * 101); // Random completion percentage for demo
+        progressData.Mrinal.completion[index] = Math.floor(Math.random() * 101);
         progressData.Nehal.completion[index] = Math.floor(Math.random() * 101);
     });
 
